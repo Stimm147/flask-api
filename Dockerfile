@@ -14,4 +14,4 @@ COPY . .
 
 # Uruchom aplikację za pomocą serwera produkcyjnego Gunicorn
 # Będzie nasłuchiwać na porcie podanym przez Railway w zmiennej $PORT
-CMD ["gunicorn", "--bind", "0.0.0.0:${PORT}", "app:app"]
+CMD gunicorn --bind 0.0.0.0:${PORT} app:app
