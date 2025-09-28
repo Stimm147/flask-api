@@ -10,7 +10,9 @@ app = Flask(__name__)
 CORS(
     app,
     resources={
-        r"/api/*": {"origins": "https://portfolio-production-3beb.up.railway.app"}
+        r"/api/*": {
+            "origins": "https://reflex-example-backend-production.up.railway.app"
+        }
     },
 )
 
