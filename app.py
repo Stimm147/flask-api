@@ -3,6 +3,9 @@ import torchvision.transforms as transforms
 from torchvision.models import MobileNet_V3_Small_Weights, mobilenet_v3_small
 from PIL import Image
 import requests
+from fastapi import FastAPI
+
+
 
 
 class ImageClassifier:
