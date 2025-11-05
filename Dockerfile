@@ -14,4 +14,4 @@ COPY . .
 
 # Uruchom aplikację za pomocą Gunicorn z Uvicorn workers
 # Będzie nasłuchiwać na porcie podanym przez Railway w zmiennej $PORT
-CMD gunicorn -k uvicorn.workers.UvicornWorker app:app --bind 0.0.0.0:${PORT}
+CMD uvicorn app:app --host 0.0.0.0 --port ${PORT}
