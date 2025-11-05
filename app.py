@@ -40,3 +40,14 @@ class ImageClassifier:
             "class_name": imagenet_labels[prediction],
             "confidence": round(confidence * 100, 1),
         }
+
+app = FastAPI()
+
+classifier = ImageClassifier()
+
+@app.post("/")
+def classify(data: dict):
+    img_url = data["url"]
+    downloaded_img = requests.get(img_url, stream=True).raw
+    result = classifier.classify_image(data=downloaded_img)
+    return result
